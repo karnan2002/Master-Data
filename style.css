@@ -1,0 +1,423 @@
+/* static/style.css */
+
+body {
+    margin: 5px;
+    border: 8px solid #0c0b0b;
+     box-sizing: border-box;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding: 3px;
+    border-radius: 8px;
+}
+
+
+
+.head1 {
+    text-align: center;
+    margin-top: 1px;
+    color:teal;  
+    
+}
+
+.head2 {
+    text-align: center;
+    margin-top: 1px;
+    color:teal;    
+
+    
+}
+
+.head3 {
+    text-align: center;
+    color:teal;   
+    margin-top: 1px;
+}
+
+.head4 {
+    text-align: center;
+    color:teal;   
+    margin-top: 1px;
+}
+.head5 {
+    text-align: center;
+    color:teal;   
+    margin-top: 1px;
+}
+.update {
+    max-width: 300px;
+    text-align: left;
+   margin-left: 40px;
+  }
+
+.insert {
+    max-width: 300px;
+    text-align: left;
+   }
+
+.export {
+    max-width: 300px;
+    text-align: left;
+    margin-left: 25px;
+    margin-top: 25px;
+   
+}
+
+.delete {
+    max-width: 300px;
+    text-align: left;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+.display {
+    max-width: 300px;
+    text-align: left;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+.result{
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+
+
+#successMessage {
+    display: none;
+    color: green;
+    margin-top: 10px;
+}
+
+
+
+input {
+    width: 90%;
+    padding: 5px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+}
+
+#btn1 {
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 15px;
+    border-radius: 8px;
+}
+#btn1:hover {
+    background-color:chocolate;
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+#btn2 {
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+
+#btn2:hover {
+    background-color:chocolate;
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#btn3 {
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+
+
+#btn3:hover {
+    background-color:chocolate;
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#btn4 {
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+
+
+#btn4:hover {
+    background-color:chocolate;
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#btn5 {
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+
+
+#btn5:hover {
+    background-color:chocolate;
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.flex{
+    display:flex;
+    gap: 430px;
+}
+
+.flex1{
+    display:flex;
+    gap: 90px;
+}
+
+
+.mainflex{
+    display:flex;
+    gap: 50px;
+}
+label{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: bolder;
+    color: black
+}
+
+
+/* Add this CSS code to your style sheet or in a <style> tag in your HTML file */
+
+.Mainbox {
+    display: flex;
+    justify-content: space-around;
+    
+}
+.Mainbox1 {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.box {
+    border: 5px solid black; /* Border color */
+    width: 220px; /* Width of the box */
+    height: 86px; /* Height of the box */
+    padding: 5px; /* Padding inside the box */
+    margin: 8px; /* Margin around the box */
+    box-sizing: border-box; /* Include padding and border in the box's total width and height */
+}
+.box1 {
+    border: 5px solid black; /* Border color */
+    width: 220px; /* Width of the box */
+    height: 86px; /* Height of the box */
+    padding: 8px; /* Padding inside the box */
+    margin: 8px;
+    margin-left:35px; /* Margin around the box */
+    box-sizing: border-box; /* Include padding and border in the box's total width and height */
+}
+
+/* Additional styling for headings and paragraphs inside the boxes */
+.box h2 {
+    margin-bottom: 8px;
+    font-size: 15px;
+    text-align: center;
+    color:teal;  
+    
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.box p {
+    margin: 0;
+    font-size:23px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color:black
+}
+
+.box1 h2 {
+    margin-bottom: 8px;
+    font-size: 15px;
+    text-align: center;
+    color:teal;  
+    
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.box1 p {
+    margin: 0;
+    font-size:23px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color:black
+}
+
+.app{
+
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 10px;
+    font-weight: bolder;
+    color: black;
+}
+
+
+/* Add this CSS to style alert messages */
+.container {
+    width: 100%;
+   
+}
+
+.alert1 {
+    margin-bottom: 15px;
+    margin: 0 auto;
+
+}
+
+.alert-danger1 {
+    color: #721c24;
+   
+}
+
+
+.alert-info1 {
+    color:black;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+ }
+
+.alert2 {
+    margin-bottom: 15px;
+    margin: 0 auto;
+}
+
+.alert-danger2{
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-success2{
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-info2 {
+  color:black;
+  font-size: 15px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+}
+
+.alert3{
+    color:black;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+
+
+
+header {
+    
+    color: white;
+    padding: 10px 20px;
+   
+    
+}
+
+
+.footer {
+    text-align: center;
+    font-size: 12px;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+
+
+.header {
+   
+    flex-direction: row;
+    display: flex;
+    align-items:flex-start;
+}
+
+.logo {
+    float: left;
+    width: 120px; /* Adjust the width as needed */
+    
+}
+
+.logo1 {
+    float: right;
+    width: 120px; /* Adjust the width as needed */
+    
+}
+
+.logo img,
+.logo1 img {
+    max-width: 100%;
+    height: auto;
+}
+
+.master{
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+
+select {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 13px;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif
+  
+}
+
+option {
+    font-size: 13px; /* Adjust the font size as needed */
+    font-family:'Times New Roman', Times, serif
+   
+    
+}

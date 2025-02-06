@@ -1,0 +1,386 @@
+<!-- new.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website.assetdata</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   </head>
+<body> 
+
+    <div class="header">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="BGLR ITD" title="BGLR ITD">
+        </div>
+        <p class='master'> ASSET MASTER DATA</P>    
+        <div class="logo1">
+            <img src="{{ url_for('static', filename='images/2.jpg') }}" alt="BGLR ITD" title="BGLR ITD">
+        </div>
+    </div>
+
+     
+    <div class="Mainbox">
+    <div class="box">
+        <h2>SITE'S COUNT</h2>
+        <p>{{ COUNT_OF_SITES }}</p>
+    </div>
+    <div class="box">
+        <h2> DVR COUNT</h2>
+        <p>{{ COUNT_OF_DVR }}</p>
+    </div>
+    <div class="box">
+        <h2>TOTAL NO OF SYSTEM</h2>
+        <p>{{ SUM_OF_SYSTEM }}</p>
+    </div>
+    <div class="box">
+        <h2>TOTAL NO OF PRINTER</h2>
+        <p>{{ SUM_OF_PRINTER }}</p>
+    </div>
+    
+    <div class="box">
+        <h2>TOTAL NO OF SCANNER</h2>
+        <p>{{ SUM_OF_SCANNER }}</p>
+    </div>
+</div>
+<div class="Mainbox1">
+    <div class="box1">
+        <h2>NO OF DOME CAMERA</h2>
+        <p>{{ SUM_OF_DOME_CAMERA }}</p>
+    </div>
+
+    <div class="box1">
+        <h2>NO OF BULLET CAMERA</h2>
+        <p>{{ SUM_OF_BULLET_CAMERA }}</p>
+    </div>
+    <div class="box1">
+        <h2>TOTAL NO OF SPS</h2>
+        <p>{{ TOTAL_NO_OF_SPS }}</p>
+    </div>
+    <div class="box1">
+        <h2>TOTAL NO OF CAMERA</h2>
+        <p>{{ TOTAL_NO_OF_CAMERA }}</p>
+    </div>
+</div>
+<div class='mainflex'>
+    <div class='flex'>
+    <div class='update'>
+    <h2 class='head1'>UPDATE MASTER</h2>
+    <form  id="updateForm" method="post" action="/update" onsubmit="showSuccessAlert()">
+        <label for="shopid">Shop Id:</label>
+        <input type="text" name="SHOP_ID" id="shopid" maxlength="5" required>
+
+        <label for="system">System:</label>
+        <input type="number" name="SYSTEM" id="system" required>
+          
+        <label for="printer">Printer:</label>
+        <input type="number" name="PRINTER" id="printer" required>
+
+        <label for="scanner">Scanner:</label>
+        <input type="number" name="SCANNER" id="scanner" required>
+        <label for="dome_camera">Dome Camera:</label>
+        <input type="number" name="DOME_CAMERA" id="dome_camera" required>
+        <label for="bullet_camera">Bullet Camera:</label>
+        <input type="number" name="BULLET_CAMERA" id="bullet_camera" required> <br>
+        <label for="DVR"> Select Dvr:</label><br>
+        <select name="DVR" id="DVR" required>
+            <option value="4CH">4CH</option>
+            <option value="8CH">8CH</option>
+            <option value="16CH">16CH</option>
+            <option value="32CH">32CH</option>
+        </select><br>
+        
+        <button id='btn1' type="submit">UPDATE</button>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="container mt-3">
+            {% for message in messages %}
+              <div class="alert1 {% if 'error' in message %}alert-danger1{% elif 'success' in message %}alert-success1{% else %}alert-info1{% endif %}" role="alert">
+                {{ message }}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+  
+    </form>
+</div>
+
+   
+<div class='insert'>
+   <h2 class='head2'> NEW SITE</h2>
+    <form  id="insertForm" method="post" action="{{ url_for('insert_data') }}" onsubmit="showSuccessAlert1()">
+        <label for="SHOP_ID">Shop Id:</label>
+        <input type="text" name="SHOP_ID" id="SHOP_ID" maxlength="5" required>
+
+        <label for="SHOP_NAME">Shop Name:</label>
+        <input type="text" name="SHOP_NAME" id="SHOP_NAME" required>
+
+        <label for="SYSTEM">System:</label>
+        <input type="number" name="SYSTEM" id="SYSTEM" required>
+
+        <label for="PRINTER">Printer:</label>
+        <input type="number" name="PRINTER" id="PRINTER" required>
+
+        <label for="SCANNER">Scanner:</label>
+        <input type="number" name="SCANNER" id="SCANNER" required>
+
+        <label for="DOME_CAMERA">Dome Camera:</label>
+        <input type="number" name="DOME_CAMERA" id="DOME_CAMERA" required>
+
+        <label for="BULLET_CAMERA">Bullet Camera:</label>
+        <input type="number" name="BULLET_CAMERA" id="BULLET_CAMERA" required>
+<br>
+        <label for="DVR">Select Dvr:</label><br>
+        <select name="DVR" id="DVR" required>
+            <option value="4CH">4CH</option>
+            <option value="8CH">8CH</option>
+            <option value="16CH">16CH</option>
+            <option value="32CH">32CH</option>
+        </select>
+        <br>
+
+        <label for="REMARKS">Remarks:</label>
+        <input type="text" name="REMARKS" id="REMARKS">
+
+        <label for="DATA_DATE">Date:</label>
+        <input type="DATE" name="DATA_DATE" id="DATA_DATE" required>
+
+        <button id='btn2'type="submit">INSERT</button>
+        {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="container mt-3">
+          {% for message in messages %}
+            <div class="alert2 {% if 'error' in message %}alert-danger2{% elif 'success' in message %}alert-success2{% else %}alert-info2{% endif %}" role="alert">
+              {{ message }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    </form>
+</div>
+<!-- Programmer: APL69954 -->
+</div>
+</div>
+<div class='flex1'>
+<!-- HTML form for deleting a record -->
+<div class='delete'>
+    <h2 class='head4'>DELETE SITE</h2>
+<form  id="deleteForm" method="post" action="/delete"  onsubmit="showSuccessAlert3()" >
+    <label for="shopid">Shop Id:</label>
+    <input type="text" name="SHOP_ID" id="shopid" maxlength="5" required>
+
+    <button id='btn4'type="submit">DELETE</button>
+    {% with messages = get_flashed_messages() %}
+{% if messages %}
+  <div class="container mt-3">
+    {% for message in messages %}
+      <div class="alert3" role="alert">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+{% endwith %}
+
+</form>
+</div>
+
+<div class='export'>
+    <h2 class='head3'>EXPORT DATA</h2>
+    <form method="post" action="/export" onsubmit="showSuccessAlert2()">
+        <label for="from_date">From Date:</label>
+        <input type="date" name="FROM_DATE" id="from_date" required>
+
+        <label for="to_date">To Date:</label>
+        <input type="date" name="TO_DATE" id="to_date" required>
+
+        <button id='btn3' type="submit">EXPORT</button>
+    </form>
+</div>
+
+<div class='display'>
+  <h2 class='head5'>ASSET'S DETAIL</h2>
+  <form action="/search" method="post"  id="displayForm">
+    <label for="shop_id">Enter Shop Id:</label>
+    <input type="text" id="shop_id" name="shop_id" maxlength="5" required>
+    <button  id='btn5'type="submit">SUBMIT</button>
+  </form>
+  <!--
+<div class='result'>
+  {% if result %}
+    <p id="result_message">SHOP_ID: {{ result[0] }}</p>
+    <p id="result_message1">SHOP_NAME: {{ result[1] }}</p>
+    <p id="result_message2">SYSTEM: {{ result[2] }}</p>
+    <p id="result_message3">PRINTER: {{ result[3] }}</p>
+    <p id="result_message4">SCANNER: {{ result[4] }}</p>
+    <p id="result_message5">DOME_CAMERA: {{ result[5] }}</p>
+    <p id="result_message6"> BULLET_CAMERA: {{ result[6] }}</p>
+    <p id="result_message7"> DVR: {{ result[7] }}</p>
+  {% endif %}
+</div>
+-->
+
+
+<div class='result'>
+  {% if result %}
+    <form method="post" action="/search" id="editForm">
+      <label for="shop_id">Shop Id:</label>
+      <input type="text" id="shop_id" name="SHOP_ID" value="{{ result[0] }}" readonly>
+
+      <label for="shop_name">Shop Name:</label>
+      <input type="text" id="shop_name" name="SHOP_NAME" value="{{ result[1] }}" readonly>
+
+      <label for="system">System:</label>
+      <input type="number" id="system" name="SYSTEM" value="{{ result[2] }}" readonly>
+
+      <label for="printer">Printer:</label>
+      <input type="number" id="printer" name="PRINTER" value="{{ result[3] }}" readonly>
+
+      <label for="scanner">Scanner:</label>
+      <input type="number" id="scanner" name="SCANNER" value="{{ result[4] }}" readonly>
+
+      <label for="dome_camera">Dome Camera:</label>
+      <input type="number" id="dome_camera" name="DOME_CAMERA" value="{{ result[5] }}" readonly>
+
+      <label for="bullet_camera">Bullet Camera:</label>
+      <input type="number" id="bullet_camera" name="BULLET_CAMERA" value="{{ result[6] }}" readonly>
+
+      <label for="dvr">Dvr:</label>
+      <input type="text" id="dvr" name="DVR" value="{{ result[7] }}" readonly>
+    </form>
+  {% endif %}
+</div>
+
+</div>
+</div>
+
+<script>
+
+  document.getElementById('deleteForm').addEventListener('submit', function () {
+    sessionStorage.setItem('scrollPosition', window.scrollY.toString());
+});
+
+// Restore scroll position after page reload
+document.addEventListener('DOMContentLoaded', function () {
+    var scrollPosition = sessionStorage.getItem('scrollPosition');
+    if (scrollPosition) {
+        window.scrollTo(0, parseInt(scrollPosition));
+        sessionStorage.removeItem('scrollPosition');
+    }
+});
+
+document.getElementById('insertForm').addEventListener('submit', function () {
+  sessionStorage.setItem('scrollPosition', window.scrollY.toString());
+});
+
+// Restore scroll position after page reload
+document.addEventListener('DOMContentLoaded', function () {
+  var scrollPosition = sessionStorage.getItem('scrollPosition');
+  if (scrollPosition) {
+      window.scrollTo(0, parseInt(scrollPosition));
+      sessionStorage.removeItem('scrollPosition');
+  }
+});
+
+document.getElementById('updateForm').addEventListener('submit', function () {
+  sessionStorage.setItem('scrollPosition', window.scrollY.toString());
+});
+
+// Restore scroll position after page reload
+document.addEventListener('DOMContentLoaded', function () {
+  var scrollPosition = sessionStorage.getItem('scrollPosition');
+  if (scrollPosition) {
+      window.scrollTo(0, parseInt(scrollPosition));
+      sessionStorage.removeItem('scrollPosition');
+  }
+});
+
+document.getElementById('displayForm').addEventListener('submit', function () {
+  sessionStorage.setItem('scrollPosition', window.scrollY.toString());
+});
+
+// Restore scroll position after page reload
+document.addEventListener('DOMContentLoaded', function () {
+  var scrollPosition = sessionStorage.getItem('scrollPosition');
+  if (scrollPosition) {
+      window.scrollTo(0, parseInt(scrollPosition));
+      sessionStorage.removeItem('scrollPosition');
+  }
+});
+
+/*
+  // Add this script to hide the message after a certain period (e.g., 5 seconds)
+  document.addEventListener('DOMContentLoaded', function() {
+    var resultMessage = document.getElementById('result_message');
+    if (resultMessage) {
+      setTimeout(function() {
+        resultMessage.style.display = 'none';
+      }, 8000);  // 5000 milliseconds = 5 seconds
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var resultMessage = document.getElementById('result_message1');
+    if (resultMessage) {
+      setTimeout(function() {
+        resultMessage.style.display = 'none';
+      }, 8000);  // 5000 milliseconds = 5 seconds
+    }
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    var resultMessage = document.getElementById('result_message2');
+    if (resultMessage) {
+      setTimeout(function() {
+        resultMessage.style.display = 'none';
+      }, 8000);  // 5000 milliseconds = 5 seconds
+    }
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    var resultMessage = document.getElementById('result_message3');
+    if (resultMessage) {
+      setTimeout(function() {
+        resultMessage.style.display = 'none';
+      }, 8000);  // 5000 milliseconds = 5 seconds
+    }
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    var resultMessage = document.getElementById('result_message4');
+    if (resultMessage) {
+      setTimeout(function() {
+        resultMessage.style.display = 'none';
+      }, 8000);  // 5000 milliseconds = 5 seconds
+    }
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    var resultMessage = document.getElementById('result_message5');
+    if (resultMessage) {
+      setTimeout(function() {
+        resultMessage.style.display = 'none';
+      }, 8000);  // 5000 milliseconds = 5 seconds
+    }
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    var resultMessage = document.getElementById('result_message6');
+    if (resultMessage) {
+      setTimeout(function() {
+        resultMessage.style.display = 'none';
+      }, 8000);  // 5000 milliseconds = 5 seconds
+    }
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    var resultMessage = document.getElementById('result_message7');
+    if (resultMessage) {
+      setTimeout(function() {
+        resultMessage.style.display = 'none';
+      }, 8000);  // 5000 milliseconds = 5 seconds
+    }
+  }); */
+</script>
+<p class='footer'>App Developed By Apollo</p>
+
+</body>
+</html>
+  
+
